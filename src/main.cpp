@@ -250,10 +250,7 @@ static std::unique_ptr<ExprAST> ParseIdentifierExpr() {
   getNextToken(); // eat identifier.
 
   if (CurTok != '(') // Simple variable ref.
-  {  
-     return std::make_unique<VariableExprAST>(IdName) ;
-  }
-  
+    return std::make_unique<VariableExprAST>(IdName);
 
   // Call.
   getNextToken(); // eat (
